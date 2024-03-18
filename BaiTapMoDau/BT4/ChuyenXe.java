@@ -1,53 +1,46 @@
-package BT4;
+package BaiTapMoDau.bt4;
 
 public class ChuyenXe {
-    String maSoChuyen,taiXe,soXe;
-    float doanhThu;
+    //Mã số chuyến, Họ tên tài xế, số xe, doanh thu
+    String maSo, taiXe, soXe;
+    int doanhThu;
 
-    public ChuyenXe(String maSoChuyen, String taiXe, String soXe, float doanhThu) {
-        this.maSoChuyen = maSoChuyen;
+    public ChuyenXe(String maSo, String taiXe, String soXe, int doanhThu) {
+        this.maSo = maSo;
         this.taiXe = taiXe;
         this.soXe = soXe;
         this.doanhThu = doanhThu;
     }
 
-    @Override
-    public String toString() {
-        return "Mã số chuyến: " +maSoChuyen+"\n"+
-                "Tài xế: "+taiXe+"\n"+
-                "Số xe: "+soXe+"\n"+
-                "Doanh thu: "+doanhThu+"\n";
+    public String getMaSo() {
+        return maSo;
     }
 
-    public String getMaSoChuyen() {
-        return maSoChuyen;
+    public void setMaSo(String maSo) {
+        this.maSo = maSo;
     }
 
     public String getTaiXe() {
         return taiXe;
     }
 
-    public String getSoXe() {
-        return soXe;
-    }
-
-    public float getDoanhThu() {
-        return doanhThu;
-    }
-
-    public void setMaSoChuyen(String maSoChuyen) {
-        this.maSoChuyen = maSoChuyen;
-    }
-
     public void setTaiXe(String taiXe) {
         this.taiXe = taiXe;
+    }
+
+    public String getSoXe() {
+        return soXe;
     }
 
     public void setSoXe(String soXe) {
         this.soXe = soXe;
     }
 
-    public void setDoanhThu(float doanhThu) {
+    public int getDoanhThu() {
+        return doanhThu;
+    }
+
+    public void setDoanhThu(int doanhThu) {
         this.doanhThu = doanhThu;
     }
 }

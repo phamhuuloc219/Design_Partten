@@ -1,33 +1,38 @@
-package BT4;
+package BaiTapMoDau.bt4;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuanLyChuyenXe{
-    List<ChuyenXe> list= new ArrayList<>();
-    public void Them(ChuyenXe cx){
-        for(ChuyenXe c:list){
-            if(c.getMaSoChuyen().equals(cx.getMaSoChuyen())){
-                return ;
-            }
+public class QuanLyChuyenXe {
+    List<ChuyenXe> dsChuyenXe = new ArrayList<>();
+    void them(ChuyenXe cx){
+        dsChuyenXe.add(cx);
+    }
+    void InDS(){
+        for (ChuyenXe chuyenXe:dsChuyenXe){
+            System.out.println(chuyenXe.toString());
         }
-        list.add(cx);
     }
-    public void inDS(){
-        for(ChuyenXe c:list)
-            System.out.println(c.toString());
+
+    int doanhThuXeNoiThanh(){
+        int tong = 0;
+        for(ChuyenXe cx:dsChuyenXe)
+            if(cx instanceof XeNoiThanh)
+                tong +=cx.doanhThu;
+        return tong;
     }
-    public float tinhDoanhThuXeNgoaiThanh(){
-        float doanhThu=0;
-        for(ChuyenXe c:list)
-            if(c instanceof ChuyenXeNgoaiThanh)
-                doanhThu+=c.getDoanhThu();
-        return doanhThu;
+    int doanhThuXeNgoaiThanh(){
+        int tong = 0;
+        for(ChuyenXe cx:dsChuyenXe)
+            if(cx instanceof XeNgoaiThanh)
+                tong +=cx.doanhThu;
+        return tong;
     }
-    public float tinhDoanhThuXeNoiThanh(){
-        float doanhThu=0;
-        for(ChuyenXe c:list)
-            if(c instanceof ChuyenXeNoiThanh)
-                doanhThu+=c.getDoanhThu();
-        return doanhThu;
+    int tongDoanhThu(){
+        int tong = 0;
+        for(ChuyenXe cx:dsChuyenXe)
+            if(cx instanceof ChuyenXe)
+                tong +=cx.doanhThu;
+        return tong;
     }
 }

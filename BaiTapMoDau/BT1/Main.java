@@ -1,16 +1,30 @@
-package BT1;
+package BaiTapMoDau.bt1;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
-        SinhVien63 sinhVien1 = new SinhVien63("Pham Huu Loc",20,"Khanh Hoa",5000,220);
-        SinhVien63 sinhVien2 = new SinhVien63("Tu Cong Thang",21,"Khanh Hoa",5000,220);
-        // In thông tin của nhân viên ra màn hình
-        System.out.println("Thông tin nhân viên 1: " + sinhVien1.getThongTin());
-        System.out.println("Tiền thưởng nhân viên 1: " + sinhVien1.tinhThuong());
+        // Khởi tạo 2 đối tượng nhân viên
+        NhanVien nhanVien1 = new NhanVien("Nguyen Van A", 25, "Ha Noi", 10000000, 180);
+        NhanVien nhanVien2 = new NhanVien("Tran Thi B", 30, "Ho Chi Minh", 12000000, 220);
 
-        System.out.println("Thông tin nhân viên 2: " + sinhVien2.getThongTin());
-        System.out.println("Tiền thưởng nhân viên 2: " + sinhVien2.tinhThuong());
+        // In thông tin của nhân viên ra màn hình
+        System.out.println("Thông tin nhân viên 1: " + nhanVien1.getThongTin());
+        System.out.println("Thông tin nhân viên 2: " + nhanVien2.getThongTin());
+
+        // Tính tiền thưởng của nhân viên
+        //nhanVien1
+        double thuong1 = nhanVien1.tinhThuong();
+        if (thuong1 == 0) {
+            System.out.println(nhanVien1.getTen() + " không được nhận tiền thưởng.");
+        } else {
+            System.out.println(nhanVien1.getTen() + " được nhận tiền thưởng là " + thuong1 + " đồng.");
+        }
+        // nhanVien2
+        double thuong2 = nhanVien2.tinhThuong();
+        if (thuong2 == 0) {
+            System.out.println(nhanVien2.getTen() + " không được nhận tiền thưởng.");
+        } else {
+            System.out.println(nhanVien2.getTen() + " được nhận tiền thưởng là " + thuong2 + " đồng.");
+        }
     }
 }
